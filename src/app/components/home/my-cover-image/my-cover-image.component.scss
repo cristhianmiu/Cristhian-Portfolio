@@ -1,0 +1,231 @@
+.section-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 83vh;
+  background: #0d0d0d;
+  color: #ffffff;
+  padding: 2rem;
+
+  .cover-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+
+    .cover-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .rotating-border {
+        width: 240px;
+        height: 240px;
+        padding: 6px;
+        border-radius: 50%;
+        background: conic-gradient(#25d366, #128c7e, #25d366);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .rotating-inner {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background: #0d0d0d;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .profile-cover {
+          width: 94%;
+          height: 94%;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 4px solid #25d366;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    .cover-text {
+      flex: 0.7;
+      text-align: left;
+
+      .cover-name,
+      .cover-title {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        clip-path: inset(0 100% 0 0);
+        animation: typingEffect 2s steps(30, end) forwards;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .cover-name {
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        animation-delay: 0.1s;
+      }
+
+      .cover-title {
+        font-size: 3rem;
+        font-weight: 400;
+        color: #aaaaaa;
+        animation-delay: 1.1s;
+      }
+
+      .cover-button {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 2.8rem;
+        background: #25d366;
+        color: white;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: scale(0.95);
+        animation: fadeInUp 0.6s ease-out forwards;
+        animation-delay: 2.2s;
+
+        &:hover {
+          background: #1ebe5d;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+@keyframes typingEffect {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-cover {
+    padding: 1rem;
+  }
+
+  .cover-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+
+  .rotating-border {
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+  }
+
+  .profile-cover {
+    width: 90%;
+    height: 90%;
+  }
+
+  .cover-text {
+    text-align: center;
+
+    .cover-name {
+      font-size: 1.6rem;
+    }
+
+    .cover-title {
+      font-size: 1rem;
+    }
+
+    .cover-button {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+/* 📲 Móviles pequeños (menos de 400px) */
+@media (max-width: 400px) {
+  .section-cover {
+    padding: 0.5rem;
+  }
+
+  .rotating-border {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-cover {
+    width: 88%;
+    height: 88%;
+  }
+
+  .cover-text .cover-name {
+    font-size: 1.2rem;
+  }
+
+  .cover-text .cover-title {
+    font-size: 0.9rem;
+  }
+
+  .cover-text .cover-button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* 💻 TABLETS (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section-cover {
+    padding: 1.5rem;
+  }
+
+  .cover-content {
+    gap: 1.5rem;
+  }
+
+  .rotating-border {
+    width: 160px;
+    height: 160px;
+  }
+
+  .profile-cover {
+    width: 92%;
+    height: 92%;
+  }
+
+  .cover-text .cover-name {
+    font-size: 2rem;
+  }
+
+  .cover-text .cover-title {
+    font-size: 1.2rem;
+  }
+
+  .cover-text .cover-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
